@@ -1,0 +1,191 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #222;
+}
+
+/* Контейнеры и секции */
+header, section, footer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Формы */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+input, textarea, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Скелетон-загрузчики */
+.skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skeleton-item {
+    background: #e0e0e0;
+    height: 100px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Меню и блюда */
+#menu-container .dish {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.dish img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.dish h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.dish p {
+    margin: 5px 0;
+}
+
+/* Пагинация */
+#pagination {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#pagination button {
+    padding: 8px 16px;
+}
+
+#page-info {
+    font-size: 16px;
+}
+
+/* Карусель */
+.promo-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-snap-type: x mandatory;
+}
+
+.promo-carousel > div {
+    flex: 0 0 auto;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    scroll-snap-align: start;
+}
+
+/* Корзина */
+#cart-items {
+    min-height: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    section, header, footer {
+        padding: 10px;
+    }
+
+    .dish {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dish img {
+        width: 80px;
+        height: 80px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
+
+/* Загрузчик */
+#loading-indicator {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Стили для пустого меню */
+#empty-menu {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+#empty-menu button {
+    margin-top: 10px;
+}
